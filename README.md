@@ -1,2 +1,22 @@
 # react-better-countdown
-a react Countdown component
+cause "react-countdown" is registered, I use 'react-better-countdown' instead.
+react-better-countdown is a simple count down component using react.
+
+## Installation
+
+`npm install react-better-countdown --save`
+
+## Usage
+
+```javascript
+import Countdown from 'react-better-countdown'
+
+<Countdown count="1000" callback={() => {}} />
+
+the "count" prop is the time count, unit is second
+the "callback" prop is the function, when count turns to zero, it executes
+```
+
+## Styles
+
+react-better-countdown can be used with your own custom styles. 

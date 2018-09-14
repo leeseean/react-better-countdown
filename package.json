@@ -1,0 +1,25 @@
+{
+  "name": "react-better-countdown",
+  "version": "1.0.0",
+  "description": "a react Countdown component",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leeseean/react-better-countdown.git"
+  },
+  "keywords": [
+    "react",
+    "countdown",
+    "react-countdown",
+    "react-better-countdown"
+  ],
+  "author": "leeseean",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leeseean/react-better-countdown/issues"
+  },
+  "homepage": "https://github.com/leeseean/react-better-countdown#readme"
+}
