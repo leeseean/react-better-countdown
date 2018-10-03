@@ -2,9 +2,10 @@
   "name": "react-better-countdown",
   "version": "1.0.0",
   "description": "a react Countdown component",
-  "main": "index.js",
+  "main": "dist/ReactCountDown.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack -p"
   },
   "repository": {
     "type": "git",
@@ -16,10 +17,27 @@
     "react-countdown",
     "react-better-countdown"
   ],
-  "author": "leeseean",
+  "author": "Zhengchen Qiu",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/leeseean/react-better-countdown/issues"
   },
-  "homepage": "https://github.com/leeseean/react-better-countdown#readme"
+  "homepage": "https://github.com/leeseean/react-better-countdown#readme",
+  "peerDependencies": {
+    "react": ">= 16.3.0"
+  },
+  "devDependencies": {
+    "babel-core": "6.26.0",
+    "babel-loader": "7.1.2",
+    "babel-preset-react-app": "^3.1.2",
+    "babel-runtime": "6.26.0",
+    "react": "^16.4.1",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2"
+  },
+  "babel": {
+    "presets": [
+      "react-app"
+    ]
+  }
 }

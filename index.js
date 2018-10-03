@@ -16,7 +16,7 @@ class Countdown extends React.Component {
                 return;
             }
             count--;
-            this.setState({count});
+            this.setState({ count });
         }, 1000);
     }
     componentDidMount() {
@@ -26,6 +26,7 @@ class Countdown extends React.Component {
         clearInterval(this.timer);
     }
     render() {
+        const { style, className } = this.props;
         let h = Math.floor(this.state.count / 60 / 60);
         h = `0${h}`.slice(-2);
         let m = Math.floor(this.state.count / 60 - h * 60);
@@ -33,7 +34,7 @@ class Countdown extends React.Component {
         let s = this.state.count - h * 60 * 60 - m * 60;
         s = `0${s}`.slice(-2);
         return (
-            <div className="count-down-wrapper">
+            <div className={`count-down-wrapper ${className}`} style={style}>
                 <i className="count-down-hours">{h}</i>
                 <i className="count-down-symbol">:</i>
                 <i className="count-down-minutes">{m}</i>
