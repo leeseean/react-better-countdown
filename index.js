@@ -7,6 +7,9 @@ class Countdown extends React.Component {
     timer = null
     tick = () => {
         let count = this.state.count;
+        if (typeof count !== 'number' || count <= 0) {
+            throw new Error(`prop 'count' must be positive integer`);
+        }
         this.timer = setInterval(() => {
             if (count <= 0) {
                 clearInterval(this.timer);
@@ -26,9 +29,6 @@ class Countdown extends React.Component {
         clearInterval(this.timer);
     }
     render() {
-        if (typeof this.state.count !== 'number' || this.state.count <= 0) {
-            throw new Error(`prop 'count' must be positive integer`);
-        }
         const { style, className } = this.props;
         let h = Math.floor(this.state.count / 60 / 60);
         h = `0${h}`.slice(-2);
