@@ -29,7 +29,7 @@ class Countdown extends React.Component {
         clearInterval(this.timer);
     }
     render() {
-        const { style, className, dayText } = this.props;
+        const { style, className, dayText = '天' } = this.props;
         const d = Math.floor(this.state.count / 60 / 60 / 24);
         let h = Math.floor(this.state.count / 60 / 60 - d * 24);
         h = `0${h}`.slice(-2);
