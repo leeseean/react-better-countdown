@@ -1,6 +1,6 @@
 {
   "name": "react-better-countdown",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "a react Countdown component",
   "main": "dist/ReactCountDown.js",
   "scripts": {
