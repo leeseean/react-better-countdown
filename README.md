@@ -18,7 +18,8 @@ import Countdown from 'react-better-countdown'
 |count|number|Date.now()|the timestamp in the future, `Date.now()` is neccesarry, unit is milliseconds
 |dayText|string|'day'|the text nearby day,`dayText="天"` means `10天10:33:22`
 |callback|function|()=>{}|when count turns to zero, callback executes
-
+|className|string|''|the class of the wrapper element
+|style|object|{}|custom style on the wrapper element
 ## Styles
 
 react-better-countdown can be used with your own custom styles. 
