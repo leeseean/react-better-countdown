@@ -2,13 +2,15 @@ import React from 'react';
 
 class Countdown extends React.Component {
     state = {
-        count: this.props.count
+        count: Date.now()
     }
     timer = null
     tick = () => {
-        let count = this.state.count;
-        if (typeof count !== 'number' || count <= 0) {
-            throw new Error(`prop 'count' must be positive integer`);
+        let count;
+        if (!this.props.count) {
+            count = Date.now();
+        } else {
+            count = Math.floor((this.props.count - Date.now()) / 1000);
         }
         this.timer = setInterval(() => {
             if (count <= 0) {
@@ -25,11 +27,17 @@ class Countdown extends React.Component {
     componentDidMount() {
         this.tick();
     }
+    componentDidUpdate(prevProps, prevState, snap) {
+        if (prevProps.count !== this.props.count) {
+            clearInterval(this.timer);
+            this.tick();
+        }
+    }
     componentWillUnmount() {
         clearInterval(this.timer);
     }
     render() {
-        const { style, className, dayText = '天' } = this.props;
+        const { style, className, dayText = 'day' } = this.props;
         const d = Math.floor(this.state.count / 60 / 60 / 24);
         let h = Math.floor(this.state.count / 60 / 60 - d * 24);
         h = `0${h}`.slice(-2);

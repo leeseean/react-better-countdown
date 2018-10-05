@@ -10,12 +10,14 @@ react-better-countdown is a simple count down component using react.
 ```javascript
 import Countdown from 'react-better-countdown'
 
-<Countdown count={1000} className="count-wrapper" style={{color: 'red'}} dayText="天" callback={() => {}} />
-
-the "count" prop is the time count, unit is second
-the "dayText" prop is the text nearby day,`dayText="天"` means `10天10:33:22`
-the "callback" prop is the function, when count turns to zero, it executes
+<Countdown count={Date.now() + 1000} className="count-wrapper" style={{color: 'red'}} dayText="天" callback={() => {}} />
 ```
+
+|Prop|Type|Default|Description|
+|:--|:--:|:-----:|:----------|
+|count|number|Date.now()|the timestamp in the future, `Date.now()` is neccesarry, unit is milliseconds
+|dayText|string|'day'|the text nearby day,`dayText="天"` means `10天10:33:22`
+|callback|function|()=>{}|when count turns to zero, callback executes
 
 ## Styles
 
