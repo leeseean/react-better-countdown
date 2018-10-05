@@ -2,13 +2,13 @@ import React from 'react';
 
 class Countdown extends React.Component {
     state = {
-        count: Date.now()
+        count: 0
     }
     timer = null
     tick = () => {
         let count;
         if (!this.props.count) {
-            count = Date.now();
+            count = 0;
         } else {
             count = Math.floor((this.props.count - Date.now()) / 1000);
         }
