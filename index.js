@@ -47,10 +47,14 @@ class Countdown extends React.Component {
         s = `0${s}`.slice(-2);
         return (
             <span className={`count-down-wrapper ${className}`} style={style}>
-                <i className="count-down-day">
-                    {d}
-                    <em className="count-down-day-text">{d > 0 ? dayText : null}</em>
-                </i>
+                {
+                    d > 0 ? (
+                        <i className="count-down-day">
+                            {d}
+                            <em className="count-down-day-text">{dayText}</em>
+                        </i>
+                    ) : null
+                }
                 <i className="count-down-hours">{h}</i>
                 <i className="count-down-symbol">:</i>
                 <i className="count-down-minutes">{m}</i>
