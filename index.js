@@ -39,11 +39,11 @@ class Countdown extends React.Component {
     render() {
         const { style, className, dayText = 'day' } = this.props;
         const d = Math.floor(this.state.count / 60 / 60 / 24);
-        let h = Math.floor(this.state.count / 60 / 60 - d * 24);
+        let h = Math.floor(this.state.count / 60 / 60 % 24);
         h = `0${h}`.slice(-2);
-        let m = Math.floor(this.state.count / 60 - h * 60 - d * 24 * 60);
+        let m = Math.floor(this.state.count / 60 % 60);
         m = `0${m}`.slice(-2);
-        let s = this.state.count - d * 24 * 60 * 60 - h * 60 * 60 - m * 60;
+        let s = this.state.count % 60;
         s = `0${s}`.slice(-2);
         return (
             <span className={`count-down-wrapper ${className}`} style={style}>
