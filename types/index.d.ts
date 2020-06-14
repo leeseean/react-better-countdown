@@ -17,7 +17,7 @@ declare module 'react-better-countdown' {
     export default class Countdown extends React.Component<CountdownProps, CountdownState> {
         state: CountdownState;
         timer: null | number;
-        tick(): void;
+        tick: () => void;
         componentDidMount(): void;
         componentDidUpdate(prevProps: CountdownProps): void;
         componentWillUnmount(): void;
