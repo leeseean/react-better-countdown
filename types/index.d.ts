@@ -2,7 +2,10 @@ import * as React from 'react';
 
 interface CountdownProps {
     count?: number;
-    dayText?: string;
+    dayText?: string | React.ReactElement;
+    hourText?: string | React.ReactElement;
+    minuteText?: string | React.ReactElement;
+    secondText?: string | React.ReactElement;
     callback?: Function;
     className?: string;
     style?: React.CSSProperties;

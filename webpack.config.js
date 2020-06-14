@@ -1,6 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 process.env.NODE_ENV = 'production';
 
@@ -31,13 +31,9 @@ module.exports = {
     ],
     //压缩js
     optimization: {
-        minimizer: [
-            new UglifyJsPlugin({
-                uglifyOptions: {
-                    minimize: false,
-                    compress: false,
-                }
-            })
-        ]
+        minimize: true,
+        minimizer: [new TerserPlugin(
+            { test: /\.js(\?.*)?$/i }
+        )],
     },
 };
